@@ -19,6 +19,7 @@
    * Tratamientos
    * Fecha
  * Citas
+   * Paciente
    * Fecha
    * Hora incio/final
    * Médico
