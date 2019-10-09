@@ -1,4 +1,4 @@
-***EXTRACCION DE REQUISITOS***
+#***EXTRACCION DE REQUISITOS***
 
 **PARTES INTERESADAS:**
  * Parte uno
@@ -6,23 +6,23 @@
 
 **DATOS QUE GESTIONA EL SISTEMA**
  * Pacientes
-  * Nombre
-  * Apellidos
-  * Código postal
-  * Número teléfono
-  * Fecha de nacimiento
-  * Domicilio
-  * Seguro
+   * Nombre
+   * Apellidos
+   * Código postal
+   * Número teléfono
+   * Fecha de nacimiento
+   * Domicilio
+   * Seguro
  * Historial del Paciente
-  * Sintomas
-  * Diagnóstico
-  * Tratamientos
-  * Fecha
+   * Sintomas
+   * Diagnóstico
+   * Tratamientos
+   * Fecha
  * Citas
-  * Fecha
-  * Hora incio/final
-  * Médico
-  * Consulta
+   * Fecha
+   * Hora incio/final
+   * Médico
+   * Consulta
 
 **REQUISITOS FUNCIONALES**
  * Añadir datos de paciente
