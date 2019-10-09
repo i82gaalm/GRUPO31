@@ -43,4 +43,4 @@
 **REQUISITOS NO FUNCIONALES**
  * Sistema Operativo Linux
  * Lenguaje de Implementacion C++
- * Interfaz
+ * Interfaz CLI
