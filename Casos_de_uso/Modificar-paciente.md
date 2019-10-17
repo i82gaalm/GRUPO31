@@ -2,7 +2,7 @@
 
 **ID**:03 **Descripción**: Se introduce el nombre y apellidos del usuario que se quiere modificar.
 
-**Actores principales**: Administrador **Actores secundarios**: Usuario
+**Actores principales**: Secretario **Actores secundarios**: Usuario
 
 **Precondiciones**:
  * Que exista el usuario en el sistema.
