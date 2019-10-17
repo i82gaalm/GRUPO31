@@ -2,7 +2,7 @@
 
 **ID**:07 **Descripción**: Se escribe la fecha y la hora de la cita que se quiera borrar.
 
-**Actores principales**: Administrador **Actores secundarios**: Usuario
+**Actores principales**: Secretario **Actores secundarios**: Usuario
 
 **Precondiciones**:
   * Que la cita exista previamente.
