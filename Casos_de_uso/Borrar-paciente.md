@@ -2,7 +2,7 @@
 
 **ID**:02 **Descripción**: Se introduce el nombre y apellido del paciente para borrarlo.
 
-**Actores principales**: Administrador **Actores secundarios**: Usuario
+**Actores principales**: Secretario **Actores secundarios**: Usuario
 
 **Precondiciones**:
  * Que el paciente exista previamente en el sistema.
