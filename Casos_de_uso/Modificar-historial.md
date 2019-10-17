@@ -2,7 +2,7 @@
 
 **ID**: 12 **Descripción**: se modifica el historial médico que se desea.
 
-**Actores principales**: Administrador **Actores secundarios**: usuario
+**Actores principales**: Secretario **Actores secundarios**: usuario
 
 **Precondiciones**:
   * El historial médico tiene que existir en el registro.
