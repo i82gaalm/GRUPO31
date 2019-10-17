@@ -2,7 +2,7 @@
 
 **ID**:08 **Descripción**: Se escribe la cita que se desea modificar.
 
-**Actores principales**: Administrador **Actores secundarios**: Usuario
+**Actores principales**: Secretario **Actores secundarios**: Usuario
 
 **Precondiciones**:
   * Que exista la cita previamente.
