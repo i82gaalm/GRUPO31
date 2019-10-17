@@ -2,10 +2,10 @@
 
 **ID**:11 **Descripción**: se escribe el historial médico que se quiera añadir.
 
-**Actores principales**: Administrador **Actores secundarios**: Usuario
+**Actores principales**: Secretario **Actores secundarios**: Usuario
 
 **Precondiciones**
- * Ninguna
+ * El paciente debe existir
 
 **Flujo principal**:
   1. El administrador desea añadir un historial médico.
