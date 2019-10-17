@@ -3,7 +3,7 @@
 **ID**: 13
 **Descripción**: Se introduce el nombre y apellidos del paciente y el sistema muestra su historial.
 
-**Actores principales**: Administrador
+**Actores principales**: Secretario
 **Actores secundarios**: Paciente
 
 **Precondiciones**:
