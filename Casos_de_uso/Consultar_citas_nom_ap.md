@@ -3,11 +3,11 @@
 **ID**: 09
 **Descripción**: Se introduce el nombre y apellidos del paciente y el sistema muestra sus citas.
 
-**Actores principales**: Administrador
+**Actores principales**: Secretario
 **Actores secundarios**: Paciente
 
 **Precondiciones**:
-* Ninguna
+* El paciente debe existir
 
 **Flujo principal**:
 1. El administrador desea consultar las citas de un paciente
