@@ -2,7 +2,7 @@
 
 **ID**:01 **Descripción**: Se introducen los datos del paciente en concreto para introducirlo en el sistema.
 
-**Actores principales**: Administrador **Actores secundarios**: Usuario
+**Actores principales**: Secretario **Actores secundarios**: Usuario
 
 **Precondiciones**:
  * Ninguna
