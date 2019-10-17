@@ -3,11 +3,11 @@
 **ID**: 10
 **Descripción**: Se introduce el día a buscar y el sistema muestra las citas.
 
-**Actores principales**: Administrador
+**Actores principales**: Secretario
 **Actores secundarios**:
 
 **Precondiciones**:
-* El día debe ser igual o posterior al actual
+* Ninguna
 
 **Flujo principal**:
 1. El administrador desea consultar las citas en un día
@@ -21,4 +21,4 @@
 
 **Flujos alternativos**:
 
-4.a. Si el día ya ha pasado, se muestra un mensaje de error
+3.a. Si el formato introducido no es válido, se muestra un mensaje de error
