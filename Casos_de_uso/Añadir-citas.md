@@ -2,7 +2,7 @@
 
 **ID**:06 **Descripción**: Se añade la hora y la fecha de la cita en el registro.
 
-**Actores principales**: Administrador **Actores secundarios**: Usuario
+**Actores principales**: Secretario **Actores secundarios**: Usuario
 
 **Precondiciones**
  * Ninguna
