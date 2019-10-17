@@ -3,7 +3,7 @@
 **ID**: 04
 **Descripción**: Se introduce el nombre y apellidos del paciente a consultar y el sistema lo muestra.
 
-**Actores principales**: Administrador
+**Actores principales**: Secretario
 **Actores secundarios**: Paciente
 
 **Precondiciones**:
