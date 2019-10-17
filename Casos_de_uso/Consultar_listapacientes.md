@@ -3,7 +3,7 @@
 **ID**: 05
 **Descripción**: Se pide la lista de pacientes y el sistema lo muestra.
 
-**Actores principales**: Administrador
+**Actores principales**: Secretario
 **Actores secundarios**: Pacientes
 
 **Precondiciones**:
