@@ -1,9 +1,9 @@
 ***EXTRACCION DE REQUISITOS***
 
 **PARTES INTERESADAS:**
- * Parte uno
- * Parte dos
-
+ * Parte uno: Clínica
+ * Parte dos: Desarrolladores
+ 
 **DATOS QUE GESTIONA EL SISTEMA**
  * Pacientes
    * Nombre
@@ -44,3 +44,5 @@
  * Sistema Operativo Linux
  * Lenguaje de Implementacion C++
  * Interfaz CLI
+ * Confirmación al realizar borrado de datos
+ * Las citas concertadas no se pueden solapar
