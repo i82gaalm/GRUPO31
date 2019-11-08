@@ -41,4 +41,4 @@
 - Fecha(string): Fecha exacta de la consulta.
 
 **Métodos:**
-- Ninguno
+- Ninguno (uso de interfaz)
