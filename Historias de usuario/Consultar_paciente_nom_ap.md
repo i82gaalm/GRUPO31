@@ -16,4 +16,4 @@ Como *administrador* quiero *localizar los datos de un paciente* para *consultar
 * Se debe poder localizar cualquier paciente registrado
 * Los resultados de la búsqueda pueden mostrar un resultado o un mensaje de error
 * Se debe mostrar un mensaje de error si el paciente no está registrado
-* Se deben mostrar todos los datos de cada paciente: Nombre, Apellidos, Código Postal, Nº Teléfono, Fecha de Nacimiento, Domicilio y Seguro
+* Se deben mostrar todos los datos más importantes de cada paciente: Nombre, Apellidos, Nº Teléfono, Domicilio y Seguro
