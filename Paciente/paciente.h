@@ -21,9 +21,10 @@ private:
 		string fecha_nacimiento_;
 		string domicilio_;
 		string seguro_;
+		list<Paciente>pacientes_;
 
 public:
-		Paciente(string nombre,string apellidos,int cod_postal=0,int telefono=0, string fecha_nacimiento="", string domicilio, string seguro){
+		Paciente(string nombre,string apellidos,int cod_postal=0,int telefono=0, string fecha_nacimiento="", string domicilio, string seguro,list<Paciente>pacientes){
 
 	    nombre_=nombre;
 	    apellidos_=apellidos;
@@ -32,6 +33,7 @@ public:
 	    fecha_nacimiento_=fecha_nacimiento;
 	    domicilio_=domicilio;
 	    seguro_=seguro;
+	    pacientes_=pacientes;
 	}
 		void Consultar_datos(string nombre,string apellidos);
 		void Consultar_lista(list<Paciente> lista);
@@ -56,6 +58,9 @@ public:
 
 		inline void setSeguro(string seguro){seguro_=seguro;}
 		inline string getSeguro(){return seguro_;}
+		
+		inline void setPacientes(list<Paciente> aux){pacientes_=aux;}
+		inline list<Paciente> getPacientes(){return pacientes_;}
 
 
 
@@ -74,8 +79,8 @@ class Citas: public Paciente{
 
 	public:
 
-			Citas(string nombre,string apellidos,string fecha, string hora_inicio, string hora_final, string medico="",  int consulta=0, int cod_postal=0,int telefono=0, string fecha_nacimiento="", string domicilio="", string seguro="") :
-				Paciente(nombre,apellidos,cod_postal,telefono,fecha_nacimiento,domicilio,seguro){
+			Citas(string nombre,string apellidos,string fecha, string hora_inicio, string hora_final, string medico="",  int consulta=0, int cod_postal=0,int telefono=0, string fecha_nacimiento="", string domicilio="", string seguro="",list<Paciente>pacientes) :
+				Paciente(nombre,apellidos,cod_postal,telefono,fecha_nacimiento,domicilio,seguro,list<Paciente>pacientes){
 			//paciente_=paciente;
 			fecha_=fecha;
 			hora_inicio_=hora_inicio;
@@ -115,8 +120,8 @@ private:
 
 public:
 
-	Historial_Paciente(string nombre,string apellidos, string sintomas, string diagnostico, string tratamientos, string fecha,int cod_postal=0,int telefono=0, string fecha_nacimiento="", string domicilio="", string seguro=""):
-		Paciente(nombre,apellidos,cod_postal,telefono,fecha_nacimiento,domicilio,seguro){
+	Historial_Paciente(string nombre,string apellidos, string sintomas, string diagnostico, string tratamientos, string fecha,int cod_postal=0,int telefono=0, string fecha_nacimiento="", string domicilio="", string seguro="",list<Paciente>pacientes):
+		Paciente(nombre,apellidos,cod_postal,telefono,fecha_nacimiento,domicilio,seguro,list<Paciente>pacientes){
 		sintomas_=sintomas;
 		diagnostico_=diagnostico;
 		tratamientos_=tratamientos;
