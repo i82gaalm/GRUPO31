@@ -1,19 +1,21 @@
 #include "paciente.h"
 #include <list>
+using namespace std;
 
-void Paciente::borrarPaciente(string fecha,string hora_inicio){
+void Paciente::borrarCitaPaciente(string s,string p){
 	
 	list<Paciente> aux;
 	list<Paciente>::iterator i;
-	aux=getPaciente();
+	aux=getPacientes();
 		for(i=aux.begin();i!=aux.end();i++){
 				
-				if((i->getFecha()==fecha)&&(i->getHora_Inicio()==hora_inicio)){
+				if((i->getFecha()==s)&&(i->getHora_Inicio()==p)){
 							aux.erase(i);
 				}
 				
 				}
 
-setPaciente(aux);
+setPacientes(aux);
 
 }
+
