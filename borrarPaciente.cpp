@@ -1,19 +1,21 @@
 #include "paciente.h"
 #include <list>
+using namespace std;
 
-void Paciente::borrarPaciente(string dni_nomap){
+void Paciente::borrarPaciente(string s){
 	
 	list<Paciente> aux;
 	list<Paciente>::iterator i;
-	aux=getPaciente();
+	aux=getPacientes();
 		for(i=aux.begin();i!=aux.end();i++){
-				string nomap=getNombre()+" "+getApellidos();
-				if(i->getDni()==dni_nomap||nomap==dni_nomap){
+				string d=getNombre()+" "+getApellidos();
+				if(i->getDni()==s||d==s){
 							aux.erase(i);
 				}
 				
 				}
 
-setPaciente(aux);
+setPacientes(aux);
 
 }
+
