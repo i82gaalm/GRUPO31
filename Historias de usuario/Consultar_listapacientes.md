@@ -15,4 +15,4 @@ Como *administrador* quiero *localizar todos los pacientes registrados* para *co
 
 * Se debe poder localizar cualquier paciente registrado
 * Los resultados de la búsqueda pueden mostrar cero o más resultados
-* Se deben mostrar todos los datos de cada paciente: Nombre, Apellidos, Código Postal, Nº Teléfono, Fecha de Nacimiento, Domicilio y Seguro
+* Se deben mostrar todos los datos más importantes de cada paciente: Nombre, Apellidos, Nº Teléfono, Domicilio y Seguro
