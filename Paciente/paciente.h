@@ -139,8 +139,8 @@ public:
 	inline void setTratamientos(string tratamientos[]){tratamientos_=tratamientos;}
 	inline string getTratamientos(){return tratamientos_;}
 
-	inline void setMedico(string medico){medico_=medico;}
-	inline string getMedico(){return medico_;}
+	inline void setFecha(string fecha){fecha_=fecha;}
+	inline string getFecha(){return fecha_;}
 };
 
 #endif
