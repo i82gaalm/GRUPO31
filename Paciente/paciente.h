@@ -21,10 +21,10 @@ private:
 		string fecha_nacimiento_;
 		string domicilio_;
 		string seguro_;
-		list<Paciente>pacientes_;
+		list<Paciente> pacientes_;
 
 public:
-		Paciente(string nombre,string apellidos,int cod_postal=0,int telefono=0, string fecha_nacimiento="", string domicilio, string seguro,list<Paciente>pacientes){
+		Paciente(string nombre,string apellidos,int cod_postal=0,int telefono=0, string fecha_nacimiento="", string domicilio, string seguro){
 
 	    nombre_=nombre;
 	    apellidos_=apellidos;
@@ -33,7 +33,6 @@ public:
 	    fecha_nacimiento_=fecha_nacimiento;
 	    domicilio_=domicilio;
 	    seguro_=seguro;
-	    pacientes_=pacientes;
 	}
 		void Consultar_datos(string nombre,string apellidos);
 		void Consultar_lista(list<Paciente> lista);
@@ -58,29 +57,26 @@ public:
 
 		inline void setSeguro(string seguro){seguro_=seguro;}
 		inline string getSeguro(){return seguro_;}
-		
-		inline void setPacientes(list<Paciente> aux){pacientes_=aux;}
-		inline list<Paciente> getPacientes(){return pacientes_;}
 
 
 
 
 };
 
-class Citas: public Paciente{
+class Cita: public Paciente{
 
 	private:
-		//Paciente paciente_;
 		string fecha_;
 		string hora_inicio_;
 		string hora_final_;
 		string medico_;
 		int consulta_;
+		list<Cita> citas_
 
 	public:
 
-			Citas(string nombre,string apellidos,string fecha, string hora_inicio, string hora_final, string medico="",  int consulta=0, int cod_postal=0,int telefono=0, string fecha_nacimiento="", string domicilio="", string seguro="",list<Paciente>pacientes) :
-				Paciente(nombre,apellidos,cod_postal,telefono,fecha_nacimiento,domicilio,seguro,list<Paciente>pacientes){
+			Cita(string nombre,string apellidos,string fecha, string hora_inicio, string hora_final, string medico="",  int consulta=0, int cod_postal=0,int telefono=0, string fecha_nacimiento="", string domicilio="", string seguro="") :
+				Paciente(nombre,apellidos,cod_postal,telefono,fecha_nacimiento,domicilio,seguro){
 			//paciente_=paciente;
 			fecha_=fecha;
 			hora_inicio_=hora_inicio;
@@ -117,18 +113,19 @@ private:
 	string diagnostico_;
 	string tratamientos_[];
 	string fecha_;
+	list<Historial_Paciente> historial_;
 
 public:
 
-	Historial_Paciente(string nombre,string apellidos, string sintomas, string diagnostico, string tratamientos, string fecha,int cod_postal=0,int telefono=0, string fecha_nacimiento="", string domicilio="", string seguro="",list<Paciente>pacientes):
-		Paciente(nombre,apellidos,cod_postal,telefono,fecha_nacimiento,domicilio,seguro,list<Paciente>pacientes){
+	Historial_Paciente(string nombre,string apellidos, string sintomas, string diagnostico, string tratamientos, string fecha,int cod_postal=0,int telefono=0, string fecha_nacimiento="", string domicilio="", string seguro=""):
+		Paciente(nombre,apellidos,cod_postal,telefono,fecha_nacimiento,domicilio,seguro){
 		sintomas_=sintomas;
 		diagnostico_=diagnostico;
 		tratamientos_=tratamientos;
 		fecha_=fecha;
 		}
 
-	Consultar(string nombre, string apellidos);
+	Consultar_historial(string nombre, string apellidos);
 
 	inline void setSintomas(string sintomas){sintomas_=sintomas;}
 	inline string getSintomas(){return sintomas_;}
@@ -139,7 +136,7 @@ public:
 	inline void setTratamientos(string tratamientos[]){tratamientos_=tratamientos;}
 	inline string getTratamientos(){return tratamientos_;}
 
-	inline void setFecha(string fecha){fecha_=fecha;}
+	inline void setFecha(string  fecha){fecha_= fecha;}
 	inline string getFecha(){return fecha_;}
 };
 
