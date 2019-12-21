@@ -7,15 +7,12 @@
 #include <fstream>
 using namespace std;
 
-
-//METER DNI
-
-
 class Paciente{
 
 private:
 		string nombre_;
 		string apellidos_;
+		string dni_
 		int cod_postal_;
 		int telefono_;
 		string fecha_nacimiento_;
@@ -36,12 +33,16 @@ public:
 	}
 		void Consultar_datos(string nombre,string apellidos);
 		void Consultar_lista(list<Paciente> lista);
+		void borrarPaciente(string s);
 
 		inline void setNombre(string nombre){nombre_=nombre;}
 		inline string getNombre(){return nombre_;}
 
 		inline void setApellidos(string apellidos){apelllidos_=apellidos;}
 		inline string getApellidos(){return apellidos_;}
+
+		inline void setDNI(string dni){dni_=dni;}
+		inline string getDNI(){return dni_;}
 
 		inline void setCodigoPostal(string cod_postal){cod_postal_=cod_postal;}
 		inline int getCodigoPostal(){return cod_postal_;}
@@ -56,14 +57,20 @@ public:
 		inline string getDomicilio(){return domicilio_;}
 
 		inline void setSeguro(string seguro){seguro_=seguro;}
-		inline string getSeguro(){return seguro_;}
-		
+		inline string getSeguro(){return segurouro_;}
+
+		inline void setPacientes(list<Paciente> pacientes){pacientes_=pacientes;}
 		inline list<Paciente> getPacientes(){return pacientes_;}
+
+
+
+
 };
 
 class Cita: public Paciente{
 
 	private:
+		//Paciente paciente_;
 		string fecha_;
 		string hora_inicio_;
 		string hora_final_;
@@ -83,8 +90,9 @@ class Cita: public Paciente{
 			consulta_=consulta;
 			}
 
-		Consultar_paciente(string nombre, string apellidos);
-		Consultar_dia(fecha);
+		void Consultar_paciente(string nombre, string apellidos);
+		void Consultar_dia(fecha);
+		void borrarCitaPaciente(string s,string p);
 
 		inline void setFecha(string fecha){fecha_=fecha;}
 		inline string getFecha(){return fecha_;}
@@ -101,6 +109,8 @@ class Cita: public Paciente{
 		inline void setConsulta(string consulta){consulta_=consulta;}
 		inline int getConsulta(){return consulta_;}
 
+		inline void setCitas(list<Cita> citas){citas_=citas;}
+		inline list<Cita> getCitas(){return citas_;}
 
 };
 
@@ -115,7 +125,7 @@ private:
 
 public:
 
-	Historial_Paciente(string nombre,string apellidos, string sintomas, string diagnostico, string tratamientos, string fecha,int cod_postal=0,int telefono=0, string fecha_nacimiento="", string domicilio="", string seguro=""):
+	void Historial_Paciente(string nombre,string apellidos, string sintomas, string diagnostico, string tratamientos, string fecha,int cod_postal=0,int telefono=0, string fecha_nacimiento="", string domicilio="", string seguro=""):
 		Paciente(nombre,apellidos,cod_postal,telefono,fecha_nacimiento,domicilio,seguro){
 		sintomas_=sintomas;
 		diagnostico_=diagnostico;
@@ -123,7 +133,7 @@ public:
 		fecha_=fecha;
 		}
 
-	Consultar_historial(string nombre, string apellidos);
+	void Consultar_historial(string nombre, string apellidos);
 
 	inline void setSintomas(string sintomas){sintomas_=sintomas;}
 	inline string getSintomas(){return sintomas_;}
