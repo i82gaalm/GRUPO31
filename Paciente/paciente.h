@@ -57,10 +57,8 @@ public:
 
 		inline void setSeguro(string seguro){seguro_=seguro;}
 		inline string getSeguro(){return seguro_;}
-
-
-
-
+		
+		inline list<Paciente> getPacientes(){return pacientes_;}
 };
 
 class Cita: public Paciente{
