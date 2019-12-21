@@ -29,7 +29,7 @@ Paciente::Consultar_lista(list<Paciente> lista){
 
 Cita::Consultar_paciente(string nombre, string apellidos){
 	int aux=1;
-	for(list<Citas>::iterator it=citas_.begin() ; it!=citas_.end(); it++){
+	for(list<Cita>::iterator it=citas_.begin() ; it!=citas_.end(); it++){
     	if (it.getNombre()==nombre && it.getApellidos()==apellidos)
     	{
     		aux=0;
@@ -42,7 +42,7 @@ Cita::Consultar_paciente(string nombre, string apellidos){
 Cita::Consultar_dia(string fecha){
 	printf("Citas del día: \n");
 	int aux=1;
-	for(list<Citas>::iterator it=citas_.begin() ; it!=citas_.end(); it++){
+	for(list<Cita>::iterator it=citas_.begin() ; it!=citas_.end(); it++){
     	if (fecha==it.getFecha())
     	{
     		aux=0;
@@ -73,3 +73,36 @@ Historial_Paciente::Consultar_historial(string nombre, string apellidos){
   	if(c==1){printf("El paciente introducido no se encuentra registrado en el sistema\n";}
 }
 
+void Cita::borrarCitaPaciente(string s,string p){
+	
+	list<Paciente> aux;
+	list<Paciente>::iterator i;
+	aux=getCitas();
+		for(i=aux.begin();i!=aux.end();i++){
+				
+				if((i->getFecha()==s)&&(i->getInicio()==p)){
+							aux.erase(i);
+				}
+				
+				}
+
+setCitas(aux);
+
+}
+
+void Paciente::borrarPaciente(string s){
+	
+	list<Paciente> aux;
+	list<Paciente>::iterator i;
+	aux=getPacientes();
+		for(i=aux.begin();i!=aux.end();i++){
+				string d=getNombre()+" "+getApellidos();
+				if(i->getDNI()==s||d==s){
+							aux.erase(i);
+				}
+				
+				}
+
+setPacientes(aux);
+
+}
