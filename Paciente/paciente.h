@@ -34,6 +34,7 @@ public:
 		void Consultar_datos(string nombre,string apellidos);
 		void Consultar_lista(list<Paciente> lista);
 		void borrarPaciente(string s);
+		void Modificar_paciente(string s);
 
 		inline void setNombre(string nombre){nombre_=nombre;}
 		inline string getNombre(){return nombre_;}
@@ -91,8 +92,9 @@ class Cita: public Paciente{
 			}
 
 		void Consultar_paciente(string nombre, string apellidos);
-		void Consultar_dia(fecha);
+		void Consultar_dia(string fecha);
 		void borrarCitaPaciente(string s,string p);
+		void Modificar_cita(string fecha);
 
 		inline void setFecha(string fecha){fecha_=fecha;}
 		inline string getFecha(){return fecha_;}
@@ -119,7 +121,7 @@ private:
 
 	string sintomas_;
 	string diagnostico_;
-	string tratamientos_[];
+	string tratamiento_;
 	string fecha_;
 	list<Historial_Paciente> historial_;
 
@@ -134,6 +136,7 @@ public:
 		}
 
 	void Consultar_historial(string nombre, string apellidos);
+	void Modificar_historial(string s);
 
 	inline void setSintomas(string sintomas){sintomas_=sintomas;}
 	inline string getSintomas(){return sintomas_;}
@@ -141,11 +144,14 @@ public:
 	inline void setDiagnostico(string diagnostico){diagnostico_=diagnostico;}
 	inline string getDiagnostico(){return diagnostico_;}
 
-	inline void setTratamientos(string tratamientos[]){tratamientos_=tratamientos;}
-	inline string getTratamientos(){return tratamientos_;}
+	inline void setTratamiento(string tratamiento){tratamiento_=tratamiento;}
+	inline string getTratamiento(){return tratamiento_;}
 
 	inline void setFecha(string  fecha){fecha_= fecha;}
 	inline string getFecha(){return fecha_;}
+
+	inline void setHistorial(list<Historial_Paciente> historial){historial_=historial;}
+	inline list<Historial_Paciente> getHistorial(){return historial_;}
 };
 
 #endif
