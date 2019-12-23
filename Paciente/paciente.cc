@@ -331,3 +331,91 @@ void Paciente::Modificar_paciente(string s){
     aux.push_back(a);
     setPacientes(aux);
 }
+void Citas::anadirCita(){
+
+		string aux;
+		list<Citas> lista;
+		list<Citas>::iterator i;
+		Cita c("");
+		
+	cout<<"Introduzca la fecha de la cita"<< '\n';
+	cin.ignore();
+	cin>>aux;
+	c.setFecha(aux);
+	cout<<"Introduzca la hora de la cita"<< '\n';
+	cin.ignore();
+	cin>>aux;
+	c.setHora_inicio(aux);
+	cout<<"Introduzca el medico de la consulta"<< '\n';
+	cin.ignore();
+	cin>>aux;
+	c.setMedico(aux);
+	cout<<"Introduzca la consulta de la cita"<< '\n';
+	cin.ignore();
+	cin>>aux;
+	c.setConsulta(aux);
+	citas_.push_back(c);
+	}
+void Historial_Paciente::anadirHistorial(){
+		string aux;
+		list<Historial_Paciente> lista;
+		list<Historial_Paciente>::iterator i;
+		Historial h("");
+		
+cout<<"Introduzca los sintomas del paciente"<< '\n';
+	cin.ignore();
+	cin>>aux;
+	h.setSintomas(aux);
+cout<<"Introduzca el diagnostico del paciente"<< '\n';
+	cin.ignore();
+	cin>>aux;
+	h.setDiagnostico(aux);
+cout<<"Introduzca los tratamientos del paciente"<< '\n';
+	cin.ignore();
+	cin>>aux;
+	h.setTratamientos(aux);
+cout<<"Introduzca la fecha"<< '\n';
+	cin.ignore();
+	cin>>aux;
+	h.setFecha(aux);
+	historial_.push_back(h);
+	}
+void Paciente::anadirPaciente(){
+	string aux;
+	list<Paciente> lista;
+	list<Paciente>::iterator i;
+	Paciente p("");
+	cout<<"Introduzca el DNI del paciente"<< '\n';
+	cin.ignore();
+	cin>>aux;
+	p.setDNI(aux);
+	cout<<"Introduzca el nombre del paciente"<< '\n';
+	cin.ignore();
+	cin>>aux;
+	p.setNombre(aux);
+	cout<<"Introduzca los apellidos del paciente"<< '\n';
+	cin.ignore();
+	cin>>aux;
+	p.setApellidos(aux);
+	cout<<"Introduzca el codigo postal del paciente"<< '\n';
+	cin.ignore();
+	cin>>aux;
+	p.setCod_postal(aux);
+	cout<<"Introduzca el telefono del paciente"<< '\n';
+	cin.ignore();
+	cin>>aux;
+	p.setTelefono(aux);
+	cout<<"Introduzca la fecha de nacimiento del paciente"<< '\n';
+	cin.ignore();
+	cin>>aux;
+	p.setFecha_nacimiento(aux);
+	cout<<"Introduzca el domicilio del paciente"<< '\n';
+	cin.ignore();
+	cin>>aux;
+	p.setDomicilio(aux);
+	cout<<"Introduzca el seguro del paciente"<< '\n';
+	cin.ignore();
+	cin>>aux;
+	p.setSeguro(aux);
+	pacientes_.push_back(p);
+	}
