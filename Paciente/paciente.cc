@@ -3,78 +3,79 @@
 void Paciente::Consultar_datos(string nombre,string apellidos){
 	int aux=1;
 	for(list<Paciente>::iterator it=pacientes_.begin() ; it!=pacientes_.end(); it++){
-    	if (it.getNombre()==nombre && it.getApellidos()==apellidos)
+    	if (it->getNombre()==nombre && it->getApellidos()==apellidos)
     	{
     		aux=0;
     		printf("Datos: \n");
 			string nomap=it->getNombre()+" "+it->getApellidos();
 			printf("Nombre y Apellidos: %s\n", nomap);
-			printf("Código Postal: %d\n", getCodigoPostal());
-			printf("Teléfono: %d\n", getTelefono());
-			printf("Fecha de Naciminento: %s\n", getNaciminento());
-			printf("Domicilio: %s\n", getDomicilio());
-			printf("Seguro: %s\n", getSeguro());		
+			printf("Código Postal: %d\n", it->getCodigoPostal());
+			printf("Teléfono: %d\n", it->getTelefono());
+			printf("Fecha de Naciminento: %s\n", it->getNacimiento());
+			printf("Domicilio: %s\n", it->getDomicilio());
+			printf("Seguro: %s\n", it->getSeguro());		
     	}
   	}
-  	if(aux==1){printf("El paciente introducido no se encuentra registrado en el sistema";)}
+  	if(aux==1){printf("El paciente introducido no se encuentra registrado en el sistema");}
 }
 
-void Paciente::Consultar_lista(list<Paciente> lista){
+void Paciente::Consultar_lista(){
   string nomap;
+  list<Paciente> lista=getPacientes();
   for(list<Paciente>::iterator it=lista.begin() ; it!=lista.end(); it++){
     nomap=it->getNombre()+" "+it->getApellidos();
-    printf("|Nombre y Apellidos: %s | Teléfono: %d | Domicilio: %s | Seguro: %s |\n", nomap, it.getTelefono(), it.getDomicilio(), it.getSeguro());
+    printf("|Nombre y Apellidos: %s | Teléfono: %d | Domicilio: %s | Seguro: %s |\n", nomap, it->getTelefono(), it->getDomicilio(), it->getSeguro());
   }
 }
 
 void Cita::Consultar_paciente(string nombre, string apellidos){
 	int aux=1;
 	for(list<Cita>::iterator it=citas_.begin() ; it!=citas_.end(); it++){
-    	if (it.getNombre()==nombre && it.getApellidos()==apellidos)
+    	if (it->getNombre()==nombre && it->getApellidos()==apellidos)
     	{
     		aux=0;
-    		printf("|Fecha: %s | Hora inicial: %s | Hora final: %s | Médico: %s | Consulta: %d |\n", it.getFecha(), it.getInicio(), it.getFinal(), it.getMedico(), it.getConsulta());
+    		printf("|Fecha: %s | Hora inicial: %s | Hora final: %s | Médico: %s | Consulta: %d |\n", it->getFecha(), it->getInicio(), it->getFinal(), it->getMedico(), it->getConsulta());
     	}
   	}
-  	if(aux==1){printf("El paciente introducido no se encuentra registrado en el sistema\n";)}
+  	if(aux==1){printf("El paciente introducido no se encuentra registrado en el sistema\n");}
 }
 
 void Cita::Consultar_dia(string fecha){
 	printf("Citas del día: \n");
 	int aux=1;
 	for(list<Cita>::iterator it=citas_.begin() ; it!=citas_.end(); it++){
-    	if (fecha==it.getFecha())
+    	if (fecha==it->getFecha())
     	{
     		aux=0;
-    		printf("|Fecha: %s | Hora inicial: %s | Hora final: %s | Médico: %s | Consulta: %d |\n", it.getFecha(), it.getInicio(), it.getFinal(), it.getMedico(), it.getConsulta());
+    		printf("|Fecha: %s | Hora inicial: %s | Hora final: %s | Médico: %s | Consulta: %d |\n", it->getFecha(), it->getInicio(), it->getFinal(), it->getMedico(), it->getConsulta());
     	}
   	}
-  	if(aux==1){printf("No hay citas registradas\n";)}
+  	if(aux==1){printf("No hay citas registradas\n");}
 }
 
 void Historial_Paciente::Consultar_historial(string nombre, string apellidos){
 	int c=1;
 	int a;
 	for(list<Historial_Paciente>::iterator it=historial_.begin() ; it!=historial_.end(); it++){
-    	if (it.getNombre()==nombre && it.getApellidos()==apellidos)
+    	if (it->getNombre()==nombre && it->getApellidos()==apellidos)
     	{
     		printf("Registro %d: \n", c);
-    		printf("Sintomas: %s\n", it.getSintomas());
-			printf("Diagnostico: %d\n", it.getDiagnostico());
-			printf("Tratamiento: %s\n", it->getTratamiento()[i]);	
-			printf("Fecha: %s\n", it.getFecha());
+    		printf("Sintomas: %s\n", it->getSintomas());
+			printf("Diagnostico: %d\n", it->getDiagnostico());
+			printf("Tratamiento: %s\n", it->getTratamiento());	
+			printf("Fecha: %s\n", it->getFecha());
 			c++;
     	}
   	}
   	if(c==1){
-  		printf("El paciente introducido no se encuentra registrado en el sistema\n";)
+  		printf("El paciente introducido no se encuentra registrado en el sistema\n");
   	}
 }
 
 void Cita::borrarCitaPaciente(string s,string p){
 	
-	list<Paciente> aux;
-	list<Paciente>::iterator i;
+	list<Cita> aux;
+	list<Cita>::iterator i;
 	aux=getCitas();
 		for(i=aux.begin();i!=aux.end();i++){
 				
@@ -89,12 +90,12 @@ setCitas(aux);
 }
 
 void Paciente::borrarPaciente(string s){
-	
+	string d;
 	list<Paciente> aux;
 	list<Paciente>::iterator i;
 	aux=getPacientes();
 		for(i=aux.begin();i!=aux.end();i++){
-				string d=getNombre()+" "+getApellidos();
+				d=getNombre()+" "+getApellidos();
 				if(i->getDNI()==s||d==s){
 							aux.erase(i);
 				}
@@ -108,7 +109,7 @@ setPacientes(aux);
 void Cita::Modificar_cita(string s){
   list <Cita>::iterator it;
   list <Cita> aux;
-  Cita a("");
+  Cita a("a","a","a","a","a");
   int opcionmenu=0;
   string opcion="s";
   string modificado;
@@ -184,7 +185,7 @@ void Cita::Modificar_cita(string s){
 void Historial_Paciente::Modificar_historial(string s){
   list <Historial_Paciente>::iterator it;
   list <Historial_Paciente> aux;
-  Historial_Paciente a("");
+  Historial_Paciente a("a","a","a","a","a","a");
   int opcionmenu=0;
   string opcion="s";
   string modificado;
@@ -210,7 +211,7 @@ void Historial_Paciente::Modificar_historial(string s){
       cout << "Introduzca el sintoma" << '\n';
       cin.ignore();
       getline(std::cin,modificado);
-      a.setSintoma(modificado);
+      a.setSintomas(modificado);
       break;
       case 2:
       cout << "Introduzca el diagnotico" << '\n';
@@ -242,9 +243,9 @@ void Historial_Paciente::Modificar_historial(string s){
 }
 
 void Paciente::Modificar_paciente(string s){
-  list <Historial_Paciente>::iterator it;
-  list <Historial_Paciente> aux;
-  Historial_Paciente a("");
+  list <Paciente>::iterator it;
+  list <Paciente> aux;
+  Paciente a("a","a");
   int opcionmenu=0;
   string opcion="s";
   string modificado;
@@ -254,9 +255,10 @@ void Paciente::Modificar_paciente(string s){
   for(it=aux.begin();it!=aux.end();it++){
     nomap=it->getNombre()+" "+it->getApellidos();
     if(nomap==s){
-      a=*it;
-      aux.erase(it);
-    }
+      	a=*it;
+      	aux.erase(it);
+     }
+	}
   while(opcion!="n"||opcion!="N"){
     cout << "Seleccione parametro a cambiar" << '\n';
     cout << "1.- DNI" << '\n';
@@ -318,8 +320,7 @@ void Paciente::Modificar_paciente(string s){
       cout << "Introduzca el seguro" << '\n';
       cin.ignore();
       getline(std::cin,modificado);
-      entero=atoi(modificado.c_str());
-      a.setSeguro(entero);
+      a.setSeguro(modificado);
       break;
     }
     cout << "¿Desea cambiar otro dato?" << '\n';
@@ -331,60 +332,70 @@ void Paciente::Modificar_paciente(string s){
     aux.push_back(a);
     setPacientes(aux);
 }
-void Citas::anadirCita(){
 
-		string aux;
-		list<Citas> lista;
-		list<Citas>::iterator i;
-		Cita c("");
-		
+
+void Cita::anadirCita(){
+
+	string aux;
+	int ent;
+	list<Cita> lista;
+	list<Cita>::iterator i;
+	Cita c("a","a","a","a","a");
 	cout<<"Introduzca la fecha de la cita"<< '\n';
 	cin.ignore();
 	cin>>aux;
 	c.setFecha(aux);
-	cout<<"Introduzca la hora de la cita"<< '\n';
+	cout<<"Introduzca la hora de Inicio"<< '\n';
 	cin.ignore();
 	cin>>aux;
-	c.setHora_inicio(aux);
+	c.setInicio(aux);
+	cout<<"Introduzca la hora de final de consulta"<< '\n';
+	cin.ignore();
+	cin>>aux;
+	c.setFinal(aux);
 	cout<<"Introduzca el medico de la consulta"<< '\n';
 	cin.ignore();
 	cin>>aux;
 	c.setMedico(aux);
-	cout<<"Introduzca la consulta de la cita"<< '\n';
+	cout<<"Introduzca el numero de la consulta de la cita"<< '\n';
 	cin.ignore();
-	cin>>aux;
-	c.setConsulta(aux);
+	cin>>ent;
+	c.setConsulta(ent);
 	citas_.push_back(c);
-	}
+}
+
+
 void Historial_Paciente::anadirHistorial(){
-		string aux;
-		list<Historial_Paciente> lista;
-		list<Historial_Paciente>::iterator i;
-		Historial h("");
-		
-cout<<"Introduzca los sintomas del paciente"<< '\n';
+	string aux;
+	list<Historial_Paciente> lista;
+	list<Historial_Paciente>::iterator i;
+	Historial_Paciente h("a","a","a","a","a","a");	
+	cout<<"Introduzca los sintomas del paciente"<< '\n';
 	cin.ignore();
 	cin>>aux;
 	h.setSintomas(aux);
-cout<<"Introduzca el diagnostico del paciente"<< '\n';
+	cout<<"Introduzca el diagnostico del paciente"<< '\n';
 	cin.ignore();
 	cin>>aux;
 	h.setDiagnostico(aux);
-cout<<"Introduzca los tratamientos del paciente"<< '\n';
+	cout<<"Introduzca los tratamientos del paciente"<< '\n';
 	cin.ignore();
 	cin>>aux;
-	h.setTratamientos(aux);
-cout<<"Introduzca la fecha"<< '\n';
+	h.setTratamiento(aux);
+	cout<<"Introduzca la fecha"<< '\n';
 	cin.ignore();
 	cin>>aux;
 	h.setFecha(aux);
 	historial_.push_back(h);
-	}
+}
+
+
 void Paciente::anadirPaciente(){
 	string aux;
+	int ent;
 	list<Paciente> lista;
 	list<Paciente>::iterator i;
-	Paciente p("");
+	Paciente p("a","a");
 	cout<<"Introduzca el DNI del paciente"<< '\n';
 	cin.ignore();
 	cin>>aux;
@@ -399,16 +410,16 @@ void Paciente::anadirPaciente(){
 	p.setApellidos(aux);
 	cout<<"Introduzca el codigo postal del paciente"<< '\n';
 	cin.ignore();
-	cin>>aux;
-	p.setCod_postal(aux);
+	cin>>ent;
+	p.setCodigoPostal(ent);
 	cout<<"Introduzca el telefono del paciente"<< '\n';
 	cin.ignore();
-	cin>>aux;
-	p.setTelefono(aux);
+	cin>>ent;
+	p.setTelefono(ent);
 	cout<<"Introduzca la fecha de nacimiento del paciente"<< '\n';
 	cin.ignore();
 	cin>>aux;
-	p.setFecha_nacimiento(aux);
+	p.setNacimiento(aux);
 	cout<<"Introduzca el domicilio del paciente"<< '\n';
 	cin.ignore();
 	cin>>aux;
