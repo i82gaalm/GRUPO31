@@ -21,6 +21,8 @@ private:
 		list<Paciente> pacientes_;
 
 public:
+		list<Cita> citas_;
+		list<Historial_Paciente> historial_;
 		Paciente(string nombre,string apellidos,int cod_postal=0,int telefono=0, string fecha_nacimiento="", string domicilio="", string seguro=""){
 
 	    nombre_=nombre;
@@ -64,9 +66,11 @@ public:
 		inline void setPacientes(list<Paciente> pacientes){pacientes_=pacientes;}
 		inline list<Paciente> getPacientes(){return pacientes_;}
 
+		inline void setCitas(list<Cita> citas){citas_=citas;}
+		inline list<Cita> getCitas(){return citas_;}
 
-
-
+		inline void setHistorial(list<Historial_Paciente> historial){historial_=historial;}
+		inline list<Historial_Paciente> getHistorial(){return historial_;}
 };
 
 class Cita: public Paciente{
@@ -78,7 +82,7 @@ class Cita: public Paciente{
 		string hora_final_;
 		string medico_;
 		int consulta_;
-		list<Cita> citas_;
+
 
 	public:
 
@@ -112,9 +116,6 @@ class Cita: public Paciente{
 		inline void setConsulta(int consulta){consulta_=consulta;}
 		inline int getConsulta(){return consulta_;}
 
-		inline void setCitas(list<Cita> citas){citas_=citas;}
-		inline list<Cita> getCitas(){return citas_;}
-
 };
 
 class Historial_Paciente: public Paciente{
@@ -124,11 +125,10 @@ private:
 	string diagnostico_;
 	string tratamiento_;
 	string fecha_;
-	list<Historial_Paciente> historial_;
 
 public:
 
-	void Historial_Paciente(string nombre,string apellidos, string sintomas, string diagnostico, string tratamientos, string fecha,int cod_postal=0,int telefono=0, string fecha_nacimiento="", string domicilio="", string seguro=""):
+	Historial_Paciente(string nombre,string apellidos, string sintomas, string diagnostico, string tratamientos, string fecha, int cod_postal=0, int telefono=0, string fecha_nacimiento="", string domicilio="", string seguro=""):
 		Paciente(nombre,apellidos,cod_postal,telefono,fecha_nacimiento,domicilio,seguro){
 		sintomas_=sintomas;
 		diagnostico_=diagnostico;
@@ -151,9 +151,6 @@ public:
 
 	inline void setFecha(string  fecha){fecha_= fecha;}
 	inline string getFecha(){return fecha_;}
-
-	inline void setHistorial(list<Historial_Paciente> historial){historial_=historial;}
-	inline list<Historial_Paciente> getHistorial(){return historial_;}
 };
 
 #endif
