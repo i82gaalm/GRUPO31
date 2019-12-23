@@ -43,7 +43,7 @@ void Paciente::anadirPaciente(){
 	cin.ignore();
 	cin>>aux;
 	p.setSeguro(aux);
-	
+	lista.push_back(p);
 	}
 	
 		
