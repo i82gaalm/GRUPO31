@@ -7,7 +7,7 @@
 
 void Historial_Paciente::anadirHistorial(){
 		string aux;
-		list<HistoriaL_Paciente> lista;
+		list<Historial_Paciente> lista;
 		list<Historial_Paciente>::iterator i;
 		Historial h("");
 		
@@ -27,5 +27,5 @@ cout<<"Introduzca la fecha"<< '\n';
 	cin.ignore();
 	cin>>aux;
 	h.setFecha(aux);
-	
+	lista.push_back(h);
 	}
