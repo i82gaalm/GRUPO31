@@ -35,6 +35,7 @@ public:
 		void Consultar_lista(list<Paciente> lista);
 		void borrarPaciente(string s);
 		void Modificar_paciente(string s);
+		void anadirPaciente();
 
 		inline void setNombre(string nombre){nombre_=nombre;}
 		inline string getNombre(){return nombre_;}
@@ -95,6 +96,7 @@ class Cita: public Paciente{
 		void Consultar_dia(string fecha);
 		void borrarCitaPaciente(string s,string p);
 		void Modificar_cita(string fecha);
+		void anadirCita();
 
 		inline void setFecha(string fecha){fecha_=fecha;}
 		inline string getFecha(){return fecha_;}
@@ -137,7 +139,7 @@ public:
 
 	void Consultar_historial(string nombre, string apellidos);
 	void Modificar_historial(string s);
-
+	void anadirHistorial();
 	inline void setSintomas(string sintomas){sintomas_=sintomas;}
 	inline string getSintomas(){return sintomas_;}
 
