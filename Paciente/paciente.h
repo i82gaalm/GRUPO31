@@ -12,7 +12,7 @@ class Paciente{
 private:
 		string nombre_;
 		string apellidos_;
-		string dni_
+		string dni_;
 		int cod_postal_;
 		int telefono_;
 		string fecha_nacimiento_;
@@ -21,7 +21,7 @@ private:
 		list<Paciente> pacientes_;
 
 public:
-		Paciente(string nombre,string apellidos,int cod_postal=0,int telefono=0, string fecha_nacimiento="", string domicilio, string seguro){
+		Paciente(string nombre,string apellidos,int cod_postal=0,int telefono=0, string fecha_nacimiento="", string domicilio="", string seguro=""){
 
 	    nombre_=nombre;
 	    apellidos_=apellidos;
@@ -32,7 +32,7 @@ public:
 	    seguro_=seguro;
 	}
 		void Consultar_datos(string nombre,string apellidos);
-		void Consultar_lista(list<Paciente> lista);
+		void Consultar_lista();
 		void borrarPaciente(string s);
 		void Modificar_paciente(string s);
 		void anadirPaciente();
@@ -40,16 +40,16 @@ public:
 		inline void setNombre(string nombre){nombre_=nombre;}
 		inline string getNombre(){return nombre_;}
 
-		inline void setApellidos(string apellidos){apelllidos_=apellidos;}
+		inline void setApellidos(string apellidos){apellidos_=apellidos;}
 		inline string getApellidos(){return apellidos_;}
 
 		inline void setDNI(string dni){dni_=dni;}
 		inline string getDNI(){return dni_;}
 
-		inline void setCodigoPostal(string cod_postal){cod_postal_=cod_postal;}
+		inline void setCodigoPostal(int cod_postal){cod_postal_=cod_postal;}
 		inline int getCodigoPostal(){return cod_postal_;}
 
-		inline void setTelefono(string telefono){telefono_=telefono;}
+		inline void setTelefono(int telefono){telefono_=telefono;}
 		inline int getTelefono(){return telefono_;}
 
 		inline void setNacimiento(string fecha_nacimiento){fecha_nacimiento_=fecha_nacimiento;}
@@ -59,7 +59,7 @@ public:
 		inline string getDomicilio(){return domicilio_;}
 
 		inline void setSeguro(string seguro){seguro_=seguro;}
-		inline string getSeguro(){return segurouro_;}
+		inline string getSeguro(){return seguro_;}
 
 		inline void setPacientes(list<Paciente> pacientes){pacientes_=pacientes;}
 		inline list<Paciente> getPacientes(){return pacientes_;}
@@ -78,13 +78,12 @@ class Cita: public Paciente{
 		string hora_final_;
 		string medico_;
 		int consulta_;
-		list<Cita> citas_
+		list<Cita> citas_;
 
 	public:
 
 			Cita(string nombre,string apellidos,string fecha, string hora_inicio, string hora_final, string medico="",  int consulta=0, int cod_postal=0,int telefono=0, string fecha_nacimiento="", string domicilio="", string seguro="") :
 				Paciente(nombre,apellidos,cod_postal,telefono,fecha_nacimiento,domicilio,seguro){
-			//paciente_=paciente;
 			fecha_=fecha;
 			hora_inicio_=hora_inicio;
 			hora_final_=hora_final;
@@ -110,7 +109,7 @@ class Cita: public Paciente{
 		inline void setMedico(string medico){medico_=medico;}
 		inline string getMedico(){return medico_;}
 
-		inline void setConsulta(string consulta){consulta_=consulta;}
+		inline void setConsulta(int consulta){consulta_=consulta;}
 		inline int getConsulta(){return consulta_;}
 
 		inline void setCitas(list<Cita> citas){citas_=citas;}
@@ -133,13 +132,14 @@ public:
 		Paciente(nombre,apellidos,cod_postal,telefono,fecha_nacimiento,domicilio,seguro){
 		sintomas_=sintomas;
 		diagnostico_=diagnostico;
-		tratamientos_=tratamientos;
+		tratamiento_=tratamientos;
 		fecha_=fecha;
 		}
 
 	void Consultar_historial(string nombre, string apellidos);
 	void Modificar_historial(string s);
 	void anadirHistorial();
+
 	inline void setSintomas(string sintomas){sintomas_=sintomas;}
 	inline string getSintomas(){return sintomas_;}
 
