@@ -29,6 +29,6 @@ void Citas::anadirCita(){
 	cin.ignore();
 	cin>>aux;
 	c.setConsulta(aux);
-	
+	lista.push_back(c);
 	}
 	
